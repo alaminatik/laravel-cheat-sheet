@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('users', function () {
+    return view('users.users');
+});
+
+Route::get('sums', function () {
+    echo $a = 4 + 5;
+
+    return $a; 
+});
+
+Route::get('user-list','users\UserController@index')->name('userlist');
+Route::get('user-list/create', 'users\UserController@create');
