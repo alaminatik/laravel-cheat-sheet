@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,28 +14,18 @@
             <tr>
                 <td>Name</td>
                 <td>Email</td>
-                <td>Age</td>
+                <td>User Type</td>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td>Alamin</td>
-                <td>alamin@gmail.com</td>
-                <td>28</td>
-            </tr>
-
-            <tr>
-                <td>Alamin</td>
-                <td>alamin@gmail.com</td>
-                <td>28</td>
-            </tr>
-
-            <tr>
-                <td>Alamin</td>
-                <td>alamin@gmail.com</td>
-                <td>28</td>
-            </tr>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->user_type }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </body>

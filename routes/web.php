@@ -27,5 +27,17 @@ Route::get('sums', function () {
     return $a; 
 });
 
+/*
+|--------------------------------------------------------------------------
+| User Routes
+|--------------------------------------------------------------------------
+*/
 Route::get('user-list','users\UserController@index')->name('userlist');
 Route::get('user-list/create', 'users\UserController@create');
+
+/*
+|--------------------------------------------------------------------------
+| Post Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('post-list','users\PostController@index');

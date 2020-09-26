@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\users;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.users');
+        $users = User::get();
+        $first_user = User::first();
+
+        // echo '<pre>';
+        // print_r($users->where('id', 1)->first()->toArray());
+        // exit();
+
+        // return view('users.users', [
+        //     'users' => $users,
+        //     'first_user' => $first_user,
+        // ]);
+        // return view('users.users')->with('users', $users)->with('first_user', $first_user);
+        return view('users.users', compact('users', 'first_user'));
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterCategoryTable extends Migration
+class DropCategoryColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AlterCategoryTable extends Migration
     public function up()
     {
         Schema::table('category', function (Blueprint $table) {
-            $table->string('title')->nullable()->after('id');
-            $table->string('stock')->nullable()->after('id');
-            
+            $table->dropColumn('stock');
         });
     }
 
